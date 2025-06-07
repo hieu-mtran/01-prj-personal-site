@@ -1,1 +1,294 @@
-/* Add you CSS here */
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+  color: #222;
+}
+
+/* Header styles */
+header {
+  background: #4a90e2;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Hero section with slightly blurred and darkened background image */
+.hero {
+  background-image: url('img/beachsd.png'); 
+  background-size: cover;
+  background-position: center;
+  height: 220px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Keeps the blur effect inside */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -10px;   /* Extend overlay above the hero */
+  left: -10px;  /* Extend overlay to the left */
+  right: -10px; /* Extend overlay to the right */
+  bottom: -10px;/* Extend overlay below the hero */
+  background: inherit;
+  filter: blur(2px) brightness(0.7); /* Softer blur and gentle darken */
+  z-index: 1;
+  pointer-events: none; /* Allow clicks through overlay */
+  border-radius: 0;     /* No rounded corners */
+}
+
+/* Hero text on top of the blurred image */
+.hero-text {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  z-index: 2; /* Make sure text is above the blur */
+  padding: 0 20px;
+  /* Remove background and border for clean look */
+  background: none;
+  border-radius: 0;
+}
+
+.hero-text h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+/* Navigation bar styles */
+nav {
+  /* Transparent white background so it blends with the hero image */
+  background: rgba(255, 255, 255, 0.7); /* semi-transparent white */
+  text-align: center;
+  padding: 0;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03); /* soft shadow for separation */
+}
+
+/* Hide menu icon by default */
+.menu-icon {
+  display: none;
+  font-size: 2em;
+  color: #2176ae;
+  padding: 10px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.8);
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+/* Nav links style */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block; /* Always show nav links on large screens */
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+/* Make nav link text blue and bold for visibility */
+nav ul li a {
+  color: #2176ae; /* blue color */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 8px;
+  display: inline-block;
+  transition: color 0.2s;
+}
+
+nav ul li a:hover {
+  color: #14375a; /* darker blue on hover */
+  text-decoration: underline;
+}
+
+/* Section styles - full width background, centered content */
+section {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.section-content {
+  margin: 0 auto;
+  padding: 40px 20px;
+  max-width: 1000px;
+  box-sizing: border-box;
+}
+
+
+/* Skills list */
+#skills ul {
+  list-style: disc inside;
+  padding-left: 0;
+}
+
+/* Make the skills section background light gray */
+#skills {
+  background: #f2f2f2; /* Light gray background */
+}
+
+/* Center the Skills heading */
+#skills h2 {
+  text-align: center;   /* Center the heading */
+  margin-top: 0;        /* Remove extra space above */
+}
+
+/* Make section headings blue like About Me for Skills and Projects */
+/* This targets h2 headings in the skills and projects sections */
+#skills h2,
+#projects h2 {
+  color: #2176ae;      /* Same blue as About Me */
+  text-align: center;  /* Center the heading */
+  margin-top: 0;       /* Remove extra space above */
+}
+
+/* Project section */
+.project {
+  margin-bottom: 16px;
+  padding: 10px;
+  border-left: 4px solid #4a90e2;
+  background: #f0f8ff;
+  border-radius: 4px;
+}
+
+/* Contact icons in hero section */
+.contact-icons {
+  margin-top: 12px;
+}
+
+/* Style each icon link */
+.contact-icons a {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+/* Make the SVG icons white for visibility on dark backgrounds */
+.contact-icons img {
+  width: 32px;
+  height: 32px;
+  /* This makes most SVG icons appear white */
+  filter: brightness(0) invert(1) drop-shadow(0 1px 4px rgba(0,0,0,0.3));
+  /* Optional: smooth transition on hover */
+  transition: filter 0.2s;
+}
+
+/* Optional: add a blue tint on hover for interactivity */
+.contact-icons a:hover img {
+  filter: brightness(0) invert(0.6) sepia(1) hue-rotate(180deg) saturate(4) drop-shadow(0 1px 4px rgba(0,0,0,0.3));
+}
+
+/* About section two-column layout */
+.about-row {
+  overflow: auto; /* Clear floats */
+  margin-top: 16px;
+  min-height: 180px; /* Make sure the row is at least as tall as the photo */
+}
+
+/* Left: photo */
+.about-photo {
+  float: left;
+  width: 200px;         /* Make the photo area bigger */
+  margin-right: 32px;
+}
+
+/* Make the photo square and bigger */
+.about-img {
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Right: info */
+.about-info {
+  overflow: hidden; /* Clear float */
+  padding-top: 12px;
+}
+
+/* Name styling */
+.about-name {
+  color: #2176ae;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+/* Skills icons layout */
+.skills-icons {
+  display: flex;              /* Place icons in a row */
+  justify-content: center;    /* Center the row */
+  gap: 40px;                  /* More space between icons */
+  margin-top: 24px;
+  flex-wrap: wrap;            /* Wrap to next line on small screens */
+}
+
+/* Each skill item has extra space around it */
+.skill-item {
+  text-align: center;         /* Center icon and text */
+  font-size: 16px;
+  margin: 0 10px;             /* Add space on left and right of each item */
+  min-width: 80px;            /* Make sure each item has some width */
+}
+
+/* Projects icons layout - similar to skills */
+.projects-icons {
+  display: flex;               /* Place icons in a row */
+  justify-content: center;     /* Center the row */
+  gap: 40px;                   /* Space between icons */
+  margin-top: 24px;
+  flex-wrap: wrap;             /* Wrap to next line on small screens */
+}
+
+/* Each project item has extra space and centers content */
+.project-item {
+  text-align: center;          /* Center icon and text */
+  font-size: 16px;
+  margin: 0 10px;
+  min-width: 100px;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 600px) {
+  /* Show menu icon */
+  .menu-icon {
+    display: inline-block;
+  }
+  /* Stack nav links vertically and hide by default */
+  nav ul {
+    display: none; /* Hide nav links by default on small screens */
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  nav ul li {
+    display: block;
+    margin: 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  nav ul li a {
+    display: block;
+    padding: 15px;
+  }
+  .about-photo, .about-info {
+    float: none;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+  .about-photo {
+    margin: 0 auto 16px -24px;
+  }
+  .about-info {
+    text-align: left;
+  }
+}

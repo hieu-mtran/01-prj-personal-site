@@ -1,11 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>My Personal Site</title>
+  <!-- Link to your external CSS file -->
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=flutter" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
 <body>
-  <!-- Add your HTML content here -->
+  <!-- Hero section with background image and name overlay -->
+  <div class="hero">
+    <div class="hero-text">
+      <h1>Hieu Tran</h1>
+      <!-- Contact icons below your name -->
+      <div class="contact-icons">
+        <!-- Email icon -->
+        <a href="mailto:tran_h10@denison.edu">
+          <img src="img/mail-svgrepo-com.svg" alt="Email" width="32" height="32">
+        </a>
+        <!-- LinkedIn icon -->
+        <a href="https://www.linkedin.com/in/hieu-mtran" target="_blank">
+          <img src="img/linkedin-svgrepo-com.svg" alt="LinkedIn" width="32" height="32">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation bar (now outside hero) -->
+  <nav>
+    <!-- Menu icon for small screens -->
+    <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+    <ul id="nav-links">
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </nav>
+
+  <!-- About/Bio section -->
+  <section id="about">
+    <div class="section-content">
+      <div class="about-row">
+        <!-- Left: Photo (square) -->
+        <div class="about-photo">
+          <img src="img/nyc.png" alt ="Me in NYC" class="about-img">
+        </div>
+        <!-- Right: Name and description -->
+        <div class="about-info">
+          <h3 class="about-name">About Me</h3>
+          <p>
+          Hello! My name is Hieu Tran. I am a rising senior at Denison University, 
+          double majoring in Computer Science and Politics & Public Affairs. I enjoy 
+          everything from hiking and traveling to playing strategy games, following 
+          election results, writing papers, and of course, learning new coding skills. I'm 
+          particularly interested in the intersection of technology and politics!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills section -->
+  <section id="skills">
+    <div class="section-content">
+      <h2>Skills</h2>
+      <!-- Skills icons with text below each icon -->
+      <div class="skills-icons">
+        <!-- HTML icon -->
+        <div class="skill-item">
+          <i class="fa-brands fa-html5" style="font-size:36px; color:#e44d26;"></i>
+          <div>HTML</div>
+        </div>
+        <!-- CSS icon -->
+        <div class="skill-item">
+          <i class="fa-brands fa-css3-alt" style="font-size:36px; color:#1572b6;"></i>
+          <div>CSS</div>
+        </div>
+        <!-- JavaScript icon -->
+        <div class="skill-item">
+          <i class="fa-brands fa-js" style="font-size:36px; color:#f7df1e;"></i>
+          <div>JavaScript</div>
+        </div>
+        <!-- Python icon example -->
+        <div class="skill-item">
+          <i class="fa-brands fa-python" style="font-size:36px; color:#3776ab;"></i>
+          <div>Python</div>
+        </div>
+        <!-- C icon -->
+        <div class="skill-item">
+          <i class="fa-solid fa-c" style="font-size:36px; color:orange;"></i>
+          <div>C/C++</div>
+        </div>
+        <!-- Dart icon using Material Symbols (Google Fonts) -->
+        <div class="skill-item">
+          <!-- This uses the Material Symbols font for the Dart/Flutter icon -->
+          <span class="material-symbols-outlined" style="font-size:32px; color:#0175c2;">
+            flutter
+          </span>
+          <div>Flutter</div>
+        </div>
+        <!-- Java icon -->
+        <div class="skill-item">
+          <i class="fa-brands fa-java" style="font-size:36px;"></i>
+          <div>Java</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects section -->
+  <section id="projects">
+    <div class="section-content">
+      <h2>Projects</h2>
+      <!-- Projects icons with text below each icon -->
+      <div class="projects-icons">
+        <!-- Operating System Project -->
+        <div class="project-item">
+          <!-- Use a computer icon for OS project -->
+          <a href="https://github.com/khoa-d-ho/operating-system" target="_blank" style="text-decoration:none; color:inherit;">
+            <i class="fa-solid fa-desktop" style="font-size:36px; color:#2176ae;"></i>
+            <div style="margin-top:8px;">Operating System</div>
+          </a>
+        </div>
+        <!-- CS181 Project: World Environment and Economic Correlation -->
+        <div class="project-item">
+          <!-- Use a globe icon for world/environment project -->
+          <a href="https://github.com/hieu-mtran/cs181-projects" target="_blank" style="text-decoration:none; color:inherit;">
+            <i class="fa-solid fa-globe" style="font-size:36px; color:#43a047;"></i>
+            <div style="margin-top:8px;">Data Projects</div>
+          </a>
+        </div>
+        <!-- Add more projects as you create them -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Simple JavaScript for slideshow animation -->
+  <script>
+    // Simple menu toggle for small screens
+    function toggleMenu() {
+      var navLinks = document.getElementById('nav-links');
+      if (navLinks.style.display === "block") {
+        navLinks.style.display = "none";
+      } else {
+        navLinks.style.display = "block";
+      }
+    }
+  </script>
 </body>
+
 </html>
